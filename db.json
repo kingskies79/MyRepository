@@ -1,12 +1,8 @@
 {
-  "slogan": 
-    { "name": "La vita è bella"
-    },  
-  "howItWorks": 
-    { "name": "How it works" 
-    },  
-  "signUp": { "name": "Sign Up" 
-  },
-  "login" :{ "name": "Login"
-  }
+  "header": 
+    { "slogan": "La vita è bella",
+      "howItWorks": "howItWorks", 
+      "signUp":  "Sign Up",
+      "login": "Login"
+    }
 }
