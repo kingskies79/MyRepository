@@ -1,9 +1,12 @@
 {
-  "header": [
-    { "title": "Slogan", "value": "La vita è bella!" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "slogan": 
+    { "name": "La vita è bella"
+    },  
+  "howItWorks": 
+    { "name": "How it works" 
+    },  
+  "signUp": { "name": "Sign Up" 
+  },
+  "login" :{ "name": "Login"
+  }
 }
