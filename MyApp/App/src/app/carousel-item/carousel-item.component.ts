@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel-item.component.css']
 })
 export class CarouselItemComponent implements OnInit {
+  isActive: boolean ;
 
-  constructor() { }
+  constructor() {
+    this.isActive =  false;
+   }
 
   ngOnInit() {
   }
