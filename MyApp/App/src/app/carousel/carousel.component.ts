@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, ContentChild, QueryList } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ContentChildren, QueryList } from '@angular/core';
 import {CarouselItemComponent} from '../carousel-item/carousel-item.component'
 @Component({
   selector: 'app-carousel',
@@ -6,14 +6,14 @@ import {CarouselItemComponent} from '../carousel-item/carousel-item.component'
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit, AfterViewInit {
-  @ContentChild(CarouselItemComponent) carouselItemList: QueryList<CarouselItemComponent>;
+  @ContentChildren(CarouselItemComponent) carouselItemList: QueryList<CarouselItemComponent>;
   @Input() delay:  500;
-  constructor() { }
+  constructor() {  }
 
   ngOnInit() {
   }
   ngAfterViewInit() {
-    const carouselItems = this.carouselItemList.toArray();
+    const carouselItems: CarouselItemComponent[] = this.carouselItemList.toArray();
     let count = 0;
     const max = carouselItems.length;
     setInterval(() => {
