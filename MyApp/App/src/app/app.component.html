@@ -1,3 +1,15 @@
-<p>
-    App Works!
-</p>
+
+<div  class="col-md6"  *ngFor="let element of elements">
+    <div class="card"  [ngClass]="{'card-outline-primary':element.type === 'text','card-outline-danger':element.type === 'img'}">
+
+        <div class="card-block">
+            <h4 class="card-title">
+                {{element.title}}
+            </h4>
+            <p class="card-text" *ngIf="element.type ==='text'">
+                {{element.value}}
+            </p>
+        </div>
+        <img class="card-img-bottom img-fluid" *ngIf="element.type==='img'" src="{{element.value}}">
+    </div>
+</div>
