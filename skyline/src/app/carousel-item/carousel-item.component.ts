@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselItemComponent implements OnInit {
   isActive: boolean;
-  constructor(src: string) {
+  constructor() {
     this.isActive = false;
    }
 
