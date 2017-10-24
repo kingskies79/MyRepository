@@ -1,0 +1,10 @@
+<div class="card card-block">
+  <h4 class="card-title">Create Joke</h4>
+  <div class="form-group">
+    <input type="text" #setup class="form-control" placeholder="Inserisci il tuo detto!">
+  </div>
+  <div class="form-group">
+    <input type="text" #punchline class="form-control" placeholder="Inserisci la tua risposta!">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="createJoke(setup,punchline)" >Create Joke</button>
+</div>
