@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { CarouselItemComponent } from './carousel-item/carousel-item.component';
+import { FormGarageComponent } from './form-garage/form-garage.component';
+import { AutoComponent } from './auto/auto.component';
+import { MotoComponent } from './moto/moto.component';
+import { FurgoneComponent } from './furgone/furgone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselComponent,
-    CarouselItemComponent
+    FormGarageComponent,
+    AutoComponent,
+    MotoComponent,
+    FurgoneComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
