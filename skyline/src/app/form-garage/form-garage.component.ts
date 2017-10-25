@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Garage } from '../garage';
 import { Veicolo } from '../veicolo';
 import { MotoComponent } from '../moto/moto.component';
@@ -10,6 +10,7 @@ import { FurgoneComponent } from '../furgone/furgone.component';
   styleUrls: ['./form-garage.component.css']
 })
 export class FormGarageComponent  implements OnInit {
+  @Output() Mezzo = new EventEmitter <Veicolo>();
   selectedValue = null;
   tipoVeicolo: string;
   tipoMotore: string;
