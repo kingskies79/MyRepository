@@ -29,11 +29,12 @@ export class VeicoloListComponent implements OnInit {
   }
   removeMezzo (id) {
     console.log('removeMezzo' + id);
-    let index: number = this.garage.indexOf(id);
-    index = index - 1;
-    if (index !== -1) {
+   // const index: number = this.garage.indexOf(id);
+    this.garage.splice(this.garage.indexOf(id), 1);
+   // console.log('index' + index);
+   /* if (index !== -1) {
         this.garage.splice(index, 1);
-    }
+    }*/
 
   }
 

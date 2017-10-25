@@ -25,7 +25,7 @@ export class FormGarageComponent  implements OnInit {
 
   TipoVeicoloAmmesso = [{ name: 'Auto' }, { name: 'Moto' }, { name: 'Furgone' }];
   constructor() {
-    this.id = 0;
+    this.id = -1;
 
   }
 
