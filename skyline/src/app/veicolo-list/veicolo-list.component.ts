@@ -27,6 +27,9 @@ export class VeicoloListComponent implements OnInit {
       alert( 'Il garage è pieno');
     }
   }
+  removeMezzo (mezzo) {
+    const index = this.garage.findIndex(mezzo);
+  }
 
   disponibilita(): boolean {
     if (this.garage.length < this.newGarage.capienza) {
