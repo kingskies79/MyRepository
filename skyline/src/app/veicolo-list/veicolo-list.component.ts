@@ -28,7 +28,8 @@ export class VeicoloListComponent implements OnInit {
     }
   }
   removeMezzo (mezzo) {
-    const index = this.garage.findIndex(mezzo);
+    const index = this.garage.findIndex(mezzo, 0);
+    this.garage.splice(index, 1);
   }
 
   disponibilita(): boolean {
