@@ -57,7 +57,7 @@ export class FormGarageComponent  implements OnInit {
   }
   inserisciMoto() {
 
-
+     console.log('inserisciMoto');
       this.InserisciMezzo.emit(new MotoComponent(this.tipoMotore));
 
 
@@ -65,14 +65,14 @@ export class FormGarageComponent  implements OnInit {
   }
 
   inserisciAuto(porte: string, alimentazione: string) {
-
+    console.log('inserisciAuto');
       this.InserisciMezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione));
 
 
   }
   inserisciFurgone() {
 
-
+    console.log('inserisciFurgone');
       this.InserisciMezzo.emit(new FurgoneComponent(this.tipoVolume));
 
 

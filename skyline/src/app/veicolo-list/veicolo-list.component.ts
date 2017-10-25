@@ -19,6 +19,7 @@ export class VeicoloListComponent implements OnInit {
   }
 
   addMezzo(mezzo) {
+    console.log(mezzo);
     if (this.disponibilita()) {
       this.garage.push(mezzo);
       console.log(this.garage);
