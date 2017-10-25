@@ -17,11 +17,11 @@ export class FormGarageComponent  implements OnInit {
   tipoVolume: string;
   tipoPorte: string;
   tipoAlimentazione: string;
-  Garage: Veicolo[] = new Array();
+
   isActiveAuto = false;
   isActiveMoto = false;
   isActiveFurgone = false;
-  newGarage: Garage = new Garage (15, ['Auto', 'Moto', 'Furgone']);
+
 
   TipoVeicoloAmmesso = [{ name: 'Auto' }, { name: 'Moto' }, { name: 'Furgone' }];
   constructor() {
@@ -57,40 +57,28 @@ export class FormGarageComponent  implements OnInit {
   }
   inserisciMoto() {
 
-    if (this.disponibilita()) {
+
       this.InserisciMezzo.emit(new MotoComponent(this.tipoMotore));
-      console.log(this.Garage);
-    } else {
-      alert('Il garage è pieno');
-    }
+
+
 
   }
 
   inserisciAuto(porte: string, alimentazione: string) {
-    if (this.disponibilita()) {
+
       this.InserisciMezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione));
-      console.log(this.Garage);
-    } else {
-      alert('Il garage è pieno');
-    }
+
+
   }
   inserisciFurgone() {
 
-    if (this.disponibilita()) {
+
       this.InserisciMezzo.emit(new FurgoneComponent(this.tipoVolume));
-      console.log(this.Garage);
-    } else {
-      alert('Il garage è pieno');
-    }
+
+
   }
 
-  disponibilita(): boolean {
-    if (this.Garage.length < this.newGarage.getCapienzaGarage()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
   eliminaVeicolo() {
 
   }
