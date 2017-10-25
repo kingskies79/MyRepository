@@ -21,16 +21,20 @@ export class VeicoloListComponent implements OnInit {
   addMezzo(mezzo) {
     console.log(mezzo);
     if (this.disponibilita()) {
-      this.garage.push(mezzo);
+      this.garage.unshift(mezzo);
       console.log(this.garage);
     } else {
       alert( 'Il garage è pieno');
     }
   }
-  removeMezzo (mezzo) {
-    console.log('removeMezzo' + mezzo);
-    const index = this.garage.findIndex(mezzo);
-    this.garage.splice(index);
+  removeMezzo (id) {
+    console.log('removeMezzo' + id);
+    let index: number = this.garage.indexOf(id);
+    index = index - 1;
+    if (index !== -1) {
+        this.garage.splice(index, 1);
+    }
+
   }
 
   disponibilita(): boolean {

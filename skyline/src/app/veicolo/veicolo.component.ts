@@ -12,9 +12,9 @@ export class VeicoloComponent  implements OnInit {
 
   ngOnInit() {
   }
-  rimuoviVeicolo(mezzi) {
-    console.log('rimuoviVeicolo' + mezzi);
-    this.rimuoviMezzo.emit(mezzi);
+  rimuoviVeicolo(id) {
+    console.log('rimuoviVeicolo' + id);
+    this.rimuoviMezzo.emit(id);
   }
 
 }

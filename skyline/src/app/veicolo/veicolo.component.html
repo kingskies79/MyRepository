@@ -1,8 +1,8 @@
 <p>
   {{mezzi.tipo}}
 </p>
-<p *ngIf="mezzi.tipo === 'Auto'">Numero porte {{mezzi.porte}}, Alimentazione  {{mezzi.alimentazione}} <a class="btn" (click)="rimuoviVeicolo(mezzi)">X</a></p>
+<p *ngIf="mezzi.tipo === 'Auto'">Numero porte {{mezzi.porte}}, Alimentazione  {{mezzi.alimentazione}} <a class="btn" (click)="rimuoviVeicolo(mezzi.id)">X</a></p>
 
-<p *ngIf="mezzi.tipo === 'Moto'">Motore tipo {{mezzi.tempi}} tempi <a class="btn" (click)="rimuoviVeicolo(mezzi)">X</a></p>
+<p *ngIf="mezzi.tipo === 'Moto'">Motore tipo {{mezzi.tempi}} tempi <a class="btn" (click)="rimuoviVeicolo(mezzi.id)">X</a></p>
 
-<p *ngIf="mezzi.tipo === 'Furgone'">Volume {{mezzi.capacita}} metri cubici <a class="btn" (click)="rimuoviVeicolo(this)">X</a></p>
+<p *ngIf="mezzi.tipo === 'Furgone'">Volume {{mezzi.capacita}} metri cubici <a class="btn" (click)="rimuoviVeicolo(mezzi.id)">X</a></p>

@@ -8,9 +8,11 @@ import {Veicolo} from '../veicolo';
 })
 export class FurgoneComponent extends Veicolo implements OnInit {
   capacita: string;
-  constructor(capacita: string) {
+  id: number;
+  constructor(capacita: string, id: number) {
     super('Furgone');
     this.capacita = capacita;
+    this.id = id;
   }
 
   ngOnInit() {

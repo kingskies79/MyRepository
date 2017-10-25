@@ -8,9 +8,11 @@ import {Veicolo} from '../veicolo';
 })
 export class MotoComponent extends Veicolo implements OnInit  {
   tempi: string;
-  constructor(tempi: string) {
+  id: number;
+  constructor(tempi: string, id: number) {
     super('Moto');
     this.tempi = tempi;
+    this.id = id;
   }
 
   ngOnInit() {

@@ -8,11 +8,13 @@ import {Veicolo} from '../veicolo';
 export class AutoComponent extends Veicolo implements OnInit {
   porte: string;
   alimentazione: string;
+  id: number;
   @Input() auto: Veicolo;
-  constructor(porte: string, alimentazione: string) {
+  constructor(porte: string, alimentazione: string, id: number) {
     super('Auto');
     this.porte = porte;
     this.alimentazione = alimentazione;
+    this.id = id;
   }
 
   ngOnInit() {

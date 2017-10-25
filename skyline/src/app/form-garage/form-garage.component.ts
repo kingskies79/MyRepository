@@ -17,7 +17,7 @@ export class FormGarageComponent  implements OnInit {
   tipoVolume: string;
   tipoPorte: string;
   tipoAlimentazione: string;
-
+  id: number;
   isActiveAuto = false;
   isActiveMoto = false;
   isActiveFurgone = false;
@@ -25,6 +25,7 @@ export class FormGarageComponent  implements OnInit {
 
   TipoVeicoloAmmesso = [{ name: 'Auto' }, { name: 'Moto' }, { name: 'Furgone' }];
   constructor() {
+    this.id = 0;
 
   }
 
@@ -56,9 +57,9 @@ export class FormGarageComponent  implements OnInit {
     }
   }
   inserisciMoto() {
-
+    this.id += 1;
      console.log('inserisciMoto');
-      this.InserisciMezzo.emit(new MotoComponent(this.tipoMotore));
+      this.InserisciMezzo.emit(new MotoComponent(this.tipoMotore, this.id));
 
 
 
@@ -66,14 +67,16 @@ export class FormGarageComponent  implements OnInit {
 
   inserisciAuto(porte: string, alimentazione: string) {
     console.log('inserisciAuto');
-      this.InserisciMezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione));
+    this.id += 1;
+      this.InserisciMezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione, this.id));
 
 
   }
   inserisciFurgone() {
 
     console.log('inserisciFurgone');
-      this.InserisciMezzo.emit(new FurgoneComponent(this.tipoVolume));
+    this.id += 1;
+      this.InserisciMezzo.emit(new FurgoneComponent(this.tipoVolume, this.id));
 
 
   }
