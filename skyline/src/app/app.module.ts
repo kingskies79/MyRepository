@@ -6,6 +6,7 @@ import { FormGarageComponent } from './form-garage/form-garage.component';
 import { AutoComponent } from './auto/auto.component';
 import { MotoComponent } from './moto/moto.component';
 import { FurgoneComponent } from './furgone/furgone.component';
+import { VeicoloListComponent } from './veicolo-list/veicolo-list.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FurgoneComponent } from './furgone/furgone.component';
     FormGarageComponent,
     AutoComponent,
     MotoComponent,
-    FurgoneComponent
+    FurgoneComponent,
+    VeicoloListComponent
   ],
   imports: [
     BrowserModule,

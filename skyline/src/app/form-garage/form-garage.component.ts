@@ -10,7 +10,7 @@ import { FurgoneComponent } from '../furgone/furgone.component';
   styleUrls: ['./form-garage.component.css']
 })
 export class FormGarageComponent  implements OnInit {
-  @Output() Mezzo = new EventEmitter <Veicolo>();
+  @Output() InserisciMezzo = new EventEmitter <Veicolo>();
   selectedValue = null;
   tipoVeicolo: string;
   tipoMotore: string;
@@ -58,7 +58,7 @@ export class FormGarageComponent  implements OnInit {
   inserisciMoto() {
 
     if (this.disponibilita()) {
-      this.Mezzo.emit(new MotoComponent(this.tipoMotore));
+      this.InserisciMezzo.emit(new MotoComponent(this.tipoMotore));
       console.log(this.Garage);
     } else {
       alert('Il garage è pieno');
@@ -68,7 +68,7 @@ export class FormGarageComponent  implements OnInit {
 
   inserisciAuto(porte: string, alimentazione: string) {
     if (this.disponibilita()) {
-      this.Mezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione));
+      this.InserisciMezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione));
       console.log(this.Garage);
     } else {
       alert('Il garage è pieno');
@@ -77,7 +77,7 @@ export class FormGarageComponent  implements OnInit {
   inserisciFurgone() {
 
     if (this.disponibilita()) {
-      this.Mezzo.emit(new FurgoneComponent(this.tipoVolume));
+      this.InserisciMezzo.emit(new FurgoneComponent(this.tipoVolume));
       console.log(this.Garage);
     } else {
       alert('Il garage è pieno');
