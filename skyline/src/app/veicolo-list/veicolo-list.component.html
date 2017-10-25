@@ -1,4 +1,4 @@
 <app-form-garage (InserisciMezzo)="addMezzo($event)"></app-form-garage>
-<app-veicolo></app-veicolo>
+<app-veicolo (jokeRemove)= "removeJoke($event)"  *ngFor ="let m of garage" [mezzi]="m" ></app-veicolo>
 
 

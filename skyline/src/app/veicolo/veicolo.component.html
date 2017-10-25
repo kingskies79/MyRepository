@@ -1,3 +1,8 @@
 <p>
-  veicolo works!
+  {{mezzi.tipo}}
 </p>
+<p *ngIf="mezzi.tipo === 'Auto'">Numero porte {{mezzi.porte}}, Alimentazione  {{mezzi.alimentazione}}</p>
+
+<p *ngIf="mezzi.tipo === 'Moto'">Motore tipo {{mezzi.tempi}} tempi</p>
+
+<p *ngIf="mezzi.tipo === 'Furgone'">Volume {{mezzi.capacita}} metri cubici</p>

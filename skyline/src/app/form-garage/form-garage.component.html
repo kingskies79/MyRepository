@@ -1,4 +1,4 @@
-<p>{{tipoVeicolo}}</p>
+
 <select [(ngModel)]="tipoVeicolo" name="Select name" (change)="dropList(tipoVeicolo)" >
   <option  *ngFor="let v of TipoVeicoloAmmesso" [attr.value]="v.name">{{v.name}}</option>
 </select>`
