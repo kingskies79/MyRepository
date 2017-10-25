@@ -58,8 +58,7 @@ export class FormGarageComponent  implements OnInit {
   inserisciMoto() {
 
     if (this.disponibilita()) {
-
-      this.Garage.push(new MotoComponent(this.tipoMotore));
+      this.Mezzo.emit(new MotoComponent(this.tipoMotore));
       console.log(this.Garage);
     } else {
       alert('Il garage è pieno');
@@ -69,7 +68,7 @@ export class FormGarageComponent  implements OnInit {
 
   inserisciAuto(porte: string, alimentazione: string) {
     if (this.disponibilita()) {
-      this.Garage.push(new AutoComponent(this.tipoPorte, this.tipoAlimentazione));
+      this.Mezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione));
       console.log(this.Garage);
     } else {
       alert('Il garage è pieno');
@@ -78,7 +77,7 @@ export class FormGarageComponent  implements OnInit {
   inserisciFurgone() {
 
     if (this.disponibilita()) {
-      this.Garage.push(new FurgoneComponent(this.tipoVolume));
+      this.Mezzo.emit(new FurgoneComponent(this.tipoVolume));
       console.log(this.Garage);
     } else {
       alert('Il garage è pieno');
