@@ -7,6 +7,7 @@ import { AutoComponent } from './auto/auto.component';
 import { MotoComponent } from './moto/moto.component';
 import { FurgoneComponent } from './furgone/furgone.component';
 import { VeicoloListComponent } from './veicolo-list/veicolo-list.component';
+import { VeicoloComponent } from './veicolo/veicolo.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { VeicoloListComponent } from './veicolo-list/veicolo-list.component';
     AutoComponent,
     MotoComponent,
     FurgoneComponent,
-    VeicoloListComponent
+    VeicoloListComponent,
+    VeicoloComponent
   ],
   imports: [
     BrowserModule,
