@@ -8,6 +8,7 @@ import { MotoComponent } from './moto/moto.component';
 import { FurgoneComponent } from './furgone/furgone.component';
 import { VeicoloListComponent } from './veicolo-list/veicolo-list.component';
 import { VeicoloComponent } from './veicolo/veicolo.component';
+import { CcAutoHoverDirective } from './cc-auto-hover.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VeicoloComponent } from './veicolo/veicolo.component';
     MotoComponent,
     FurgoneComponent,
     VeicoloListComponent,
-    VeicoloComponent
+    VeicoloComponent,
+    CcAutoHoverDirective
   ],
   imports: [
     BrowserModule,
