@@ -3,8 +3,8 @@
       <h4 class="card card-title">
           {{mezzi.tipo}}
       </h4>
-    <p appCcAutoHover *ngIf="mezzi.tipo === 'Auto'  " class="text-primary ">Numero porte {{mezzi.porte}}, Alimentazione {{mezzi.alimentazione}}
-      <img class="card-img" src=""/>
+    <p  *ngIf="mezzi.tipo === 'Auto'  " class="text-primary ">Numero porte {{mezzi.porte}}, Alimentazione {{mezzi.alimentazione}}
+        <span [appCcAutoHover]="{prova:'.card-img'}" class="glyphicon glyphicon-search"> <img class="card-img" src="../../../src/app/img/5Porte.jpg"/></span>
 
       <a class="btn btn-warning" (click)="rimuoviVeicolo(mezzi.id)">X</a>
     </p>
