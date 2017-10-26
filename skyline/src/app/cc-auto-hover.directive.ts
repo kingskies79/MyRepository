@@ -10,6 +10,6 @@ export class CcAutoHoverDirective {
   }
  @HostListener  ('mouseover') onmouseover() {
    const part = this.el.nativeElement.querySelector('.card-img');
-   this.renderer.setElementAttribute(part, 'src', './img/2tempi.jpg');
+   this.renderer.setElementAttribute(part, 'src', './img/5Porte.jpg');
  }
 }
