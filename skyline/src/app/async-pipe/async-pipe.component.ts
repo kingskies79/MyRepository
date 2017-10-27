@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {Observable} from 'rxjs/RX';
 
 @Component({
   selector: 'app-async-pipe',
@@ -7,18 +8,27 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
   styleUrls: ['./async-pipe.component.css']
 })
 export class AsyncPipeComponent implements OnInit, OnDestroy {
-  promiseData: Object;
+  observableData: number;
+  subscription: Object ;
 
   constructor() {
-    this.getPromise().then(v => this.promiseData = v);
+    this.subscribeObservable();
   }
-  getPromise() {
-    return new Promise((resolve, reject) => { setTimeout(() => resolve('Promise complete!'), 3000); });
+  getObservable() {
+    return Observable
+          .interval(1000)
+          .take(10)
+          .map ((v) => v * v);
   }
+    subscribeObservable() {
+      this.subscription = this.getObservable()
+      .subscribe( v => this.observableData = v);
+    }
 
   ngOnInit() {
   }
   ngOnDestroy() {
+
 
   }
 
