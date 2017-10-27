@@ -3,7 +3,7 @@
       {{joke.setup}}
     </h4>
     <p class="card-text" [hidden]="joke.hide" >
-      {{joke.punchline}}
+      {{joke.punchline | clean: 'boo,damn,hell'}}
     </p>
     <a class="btn btn-primary" (click)="joke.toggle()">
       Cliccami

@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { JokeComponent } from './joke/joke.component';
 import { JokeListComponent } from './joke-list/joke-list.component';
 import { FormComponent } from './form/form.component';
+import { CleanPipe } from './clean.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FormComponent } from './form/form.component';
     HeaderComponent,
     JokeComponent,
     JokeListComponent,
-    FormComponent
+    FormComponent,
+    CleanPipe
   ],
   imports: [
     BrowserModule
