@@ -9,5 +9,5 @@ import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 })
 export class AppComponent {
 
-  title = 'Skyline';
+  imageUrl = '';
 }

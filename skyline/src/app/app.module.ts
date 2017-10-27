@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
+import { DefaultPipe } from './default.pipe';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AsyncPipeComponent
+    DefaultPipe
   ],
   imports: [
     BrowserModule,
