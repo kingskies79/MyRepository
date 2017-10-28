@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JokeListComponent } from './joke-list.component';
+import { ModelFormComponent } from './model-form.component';
 
-describe('JokeListComponent', () => {
-  let component: JokeListComponent;
-  let fixture: ComponentFixture<JokeListComponent>;
+describe('ModelFormComponent', () => {
+  let component: ModelFormComponent;
+  let fixture: ComponentFixture<ModelFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JokeListComponent ]
+      declarations: [ ModelFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JokeListComponent);
+    fixture = TestBed.createComponent(ModelFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
