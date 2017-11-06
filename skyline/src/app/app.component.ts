@@ -11,13 +11,15 @@ import {URLSearchParams, Http, Response, RequestOptions, Headers, HttpModule} fr
 
 })
 export class AppComponent {
+  private loading: boolean;
 
 
   constructor (private itunes: SearchService) {
 
   }
 doSearch(term: string) {
-  this.itunes.search(term);
+  this.loading = true;
+  this.itunes.search(term).then(_ => this.loading = false);
 
 }
 }

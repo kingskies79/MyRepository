@@ -1,11 +1,16 @@
+<div class="form-group">
+    <input type="search" class="form-control" placeholder="Enter search string" #search>
+</div>
+<button class="btn btn-primar" (click)="doSearch(search.value)">Search</button>
 
-    <div class="form-group">
-        <input type="search" class="form-control" placeholder="Enter search string" #search>
-    </div>
-    <button class="btn btn-primar" (click)= "doSearch(search.value)">Search</button>
-
-
+<hr>
+<div class="text-center">
+    <p class="lead" *ngIf="loading">
+        Loading...
+    </p>
+</div>
 <ul>
-    <li *ngFor="let track of itunes.results"> {{track.trackName}}
-        </li>
-        </ul>
+    <li *ngFor="let track of itunes.results">
+        <img src="{{track.thumbnail}}"> <a target="_blank" href="{{track.link}}">{{track.track}}</a>
+    </li>
+</ul>
