@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OpaqueToken, Inject } from '@angular/core';
 import {Http, Response, RequestOptions, Headers, HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
+import {SearchService} from './search-service';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
 
   imports: [BrowserModule, HttpModule],
 
-  providers: [],
+  providers: [SearchService],
 
   bootstrap: [AppComponent]
 })
