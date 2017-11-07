@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/RX';
+import {FormControl} from '@angular/forms';
 import {SearchService} from './search-service';
+import {SearchItem} from './search-item';
 import {URLSearchParams, Http, Response, RequestOptions, Headers, HttpModule} from '@angular/http';
 
 @Component({
@@ -10,16 +12,27 @@ import {URLSearchParams, Http, Response, RequestOptions, Headers, HttpModule} fr
   styleUrls: ['./app.component.css']
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   private loading: boolean;
+  private results: Observable<SearchItem[]>;
+  private searchField: FormControl;
 
 
   constructor (private itunes: SearchService) {
 
   }
 doSearch(term: string) {
-  this.loading = true;
-  this.itunes.search(term).then(_ => this.loading = false);
+ console.log (term);
+  this.itunes.search(term);
 
+}
+ngOnInit () {
+this.searchField = new FormControl();
+this.results = this.searchField.valueChanges
+.debounceTime(400)
+.distinctUntilChanged()
+.do(_ => this.loading = true)
+.switchMap(term => this.itunes.search(term))
+.do(_ => this.loading = false)
 }
 }
