@@ -4,7 +4,11 @@ import 'rxjs/RX';
 import {FormControl} from '@angular/forms';
 import {SearchService} from './search-service';
 import {SearchItem} from './search-item';
+import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
 import {URLSearchParams, Http, Response, RequestOptions, Headers, HttpModule} from '@angular/http';
+import {HomeComponent} from './home/home.component';
+import {SearchComponent} from './search/search.component';
+
 
 @Component({
   selector: 'app-root',
@@ -13,26 +17,17 @@ import {URLSearchParams, Http, Response, RequestOptions, Headers, HttpModule} fr
 
 })
 export class AppComponent implements OnInit {
-  private loading: boolean;
-  private results: Observable<SearchItem[]>;
-  private searchField: FormControl;
 
 
-  constructor (private itunes: SearchService) {
+
+
+
+  constructor () {
 
   }
-doSearch(term: string) {
- console.log (term);
-  this.itunes.search(term);
 
-}
+
 ngOnInit () {
-this.searchField = new FormControl();
-this.results = this.searchField.valueChanges
-.debounceTime(400)
-.distinctUntilChanged()
-.do(_ => this.loading = true)
-.switchMap(term => this.itunes.search(term))
-.do(_ => this.loading = false)
+
 }
 }
