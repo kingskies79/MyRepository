@@ -12,16 +12,19 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistTrackListComponent } from './artist-track-list/artist-track-list.component';
 import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
+import {OnlyLoggedInUsersGuard} from './only-logged-in-users-guard';
+import {UserService} from './user-service';
 import {AlwaysAuthGuard} from './always-auth-guard';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home' , pathMatch: 'full'},
   {path: 'find', redirectTo: 'search'},
   {path: 'home', component: HomeComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'artist/:artistId/tracks', component: ArtistTrackListComponent, canActivate: [AlwaysAuthGuard]},
-  {path: 'artist/:artistId/albums', component: ArtistAlbumListComponent, canActivate: [AlwaysAuthGuard]},
-  {path: 'artist/:artistId', component: ArtistComponent, canActivate: [AlwaysAuthGuard]},
+  {path: 'artist/:artistId/tracks', component: ArtistTrackListComponent, canActivate: [OnlyLoggedInUsersGuard, AlwaysAuthGuard]},
+  {path: 'artist/:artistId/albums', component: ArtistAlbumListComponent, canActivate: [OnlyLoggedInUsersGuard, AlwaysAuthGuard]},
+  {path: 'artist/:artistId', component: ArtistComponent, canActivate: [OnlyLoggedInUsersGuard, AlwaysAuthGuard]},
 
   {path: '**', component: HomeComponent}
 ];
@@ -41,7 +44,7 @@ const routes: Routes = [
 
   imports: [BrowserModule, JsonpModule,  ReactiveFormsModule, FormsModule, RouterModule.forRoot(routes, {useHash: true})],
 
-  providers: [SearchService, AlwaysAuthGuard ],
+  providers: [SearchService, AlwaysAuthGuard, OnlyLoggedInUsersGuard, UserService],
 
   bootstrap: [AppComponent]
 })
