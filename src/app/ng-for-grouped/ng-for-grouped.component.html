@@ -1,0 +1,9 @@
+<p>
+  ng-for-grouped
+</p>
+<ul *ngFor="let group of peopleByCountry">
+  <li>{{group.country}} </li>
+  <ul *ngFor="let person of group.people" >
+    <li>{{person.name}}</li>
+  </ul>
+</ul> 
