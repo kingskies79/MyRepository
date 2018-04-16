@@ -1,0 +1,8 @@
+<div class="m-t-1">
+<app-joke-form (jokeCreated)="addJoke($event)"></app-joke-form>
+<app-joke *ngFor="let j of Jokes" [joke]="j" >
+    <h1 class="setup">{{j.Setup}}</h1>
+    <h2 class="punchline" [hidden]="j.hide">{{j.Punchline}}</h2>
+
+</app-joke>
+</div>
