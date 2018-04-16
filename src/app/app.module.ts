@@ -4,16 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { JokeComponent } from './joke/joke.component';
-import { JokeListComponent } from './joke-list/joke-list.component';
-import { JokeFormComponent } from './joke-form/joke-form.component';
+import { NgForComponent } from './ng-for/ng-for.component';
+import { NgForGroupedComponent } from './ng-for-grouped/ng-for-grouped.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    JokeComponent,
-    JokeListComponent,
-    JokeFormComponent
+    NgForComponent,
+    NgForGroupedComponent,
+
   ],
   imports: [
     BrowserModule,

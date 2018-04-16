@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Joke} from '../app/joke';
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,4 @@ import {Joke} from '../app/joke';
 })
 export class AppComponent {
   
-  joke: Joke = new Joke ('Chi cerca trova', ' Ku sekita vinci' );
 }
