@@ -24,7 +24,7 @@ export class NgForGroupedComponent implements OnInit {
 
       },
       {
-        'country': 'US',
+        'country': 'USA',
         'people': [
           {
             "name": "Day Meyers"
@@ -36,7 +36,21 @@ export class NgForGroupedComponent implements OnInit {
             "name": "Cook Tyson"
           }
         ]
-      }
+      },
+      {
+        'country': 'HK',
+        'people': [
+          {
+            "name": "Dan Myller"
+          },
+          {
+            "name": "Christin Ellis"
+          },
+          {
+            "name": "Jack Tyson"
+          }
+        ]
+      },
     ];
   }
 

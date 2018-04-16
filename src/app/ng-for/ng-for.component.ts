@@ -11,13 +11,16 @@ people: any []=[];
      // tslint:disable-next-line:label-position
      this.people  = [
        {
-        "name": "Fabio Leotta"
+        "name": "Fabio Leotta",
+        "age" : 30
        },
        {
-         "name": "John Lennon"
+         "name": "John Lennon",
+         "age": 35
        },
        {
-         "name": "Pierluigi Neva"
+         "name": "Pierluigi Neva",
+         "age": 28
        }
      ]
   }
