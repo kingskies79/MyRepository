@@ -1,0 +1,7 @@
+<h4>ngStyle</h4>
+<ul *ngFor="let group of peopleByCountry">
+  <li [ngStyle]="{'color': getColor(group.country)}">({{group.country}})</li>
+  <ul *ngFor="let person of group.people" >
+    <li [ngStyle]="{'color': getColor(group.country)}">{{person.name}}</li>
+  </ul>
+</ul> 
