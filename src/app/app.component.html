@@ -2,7 +2,7 @@
   <app-joke-list>
     <app-joke [joke]="joke">
       <span class="setup">{{joke.Setup}}?</span>
-    <h1 class="punchline" [hidden]="joke.hide">{{joke.Punchline}}</h1>
+    <h1 class="punchline card-text" [style.display]="'none'">{{joke.Punchline}}</h1>
     </app-joke>
   </app-joke-list>
 </h1>
