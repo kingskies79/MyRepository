@@ -11,7 +11,7 @@ export class JokeListComponent implements OnInit, AfterViewInit {
  
   
  Jokes : Joke [] = [
-      new Joke('Disse la vacca al mulo', 'Oggi ti puzza il culo'),
+      new Joke('Disse la vacca al mulo', 'boo'),
       new Joke('Rispose il mulo alla vacca', 'Ho appena fatto la cacca'),
       new Joke('Chi tardi arriva', 'male alloggia')
     ];

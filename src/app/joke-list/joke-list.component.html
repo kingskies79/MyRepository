@@ -2,7 +2,7 @@
 <h4>View Jokes</h4>
 <app-joke *ngFor="let j of Jokes" [joke]="j" >
     <h1 class="setup">{{j.Setup}}</h1>
-    <h2 class="punchline card-text" [style.display]="'none'">{{j.Punchline}}</h2>
+    <h2 class="punchline card-text" [style.display]="'none'">{{j.Punchline | default: 'boo,damn,hell'}}</h2>
    
 </app-joke>
 <h4>Content Jokes</h4>

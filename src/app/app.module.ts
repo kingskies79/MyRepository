@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {DefaultPipe} from './default.pipe';
 
 import { AppComponent } from './app.component';
 import { JokeComponent } from './joke/joke.component';
@@ -15,7 +16,8 @@ import { CardHoverDirective } from './card-hover.directive';
     JokeComponent,
     JokeListComponent,
     JokeFormComponent,
-    CardHoverDirective
+    CardHoverDirective,
+    DefaultPipe
   ],
   imports: [
     BrowserModule,
