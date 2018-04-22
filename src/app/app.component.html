@@ -1,8 +1,16 @@
-<h1>
-  <app-joke-list>
-    <app-joke [joke]="joke">
-      <span class="setup">{{joke.Setup}}?</span>
-    <h1 class="punchline" [hidden]="joke.hide">{{joke.Punchline}}</h1>
-    </app-joke>
-  </app-joke-list>
-</h1>
+<div class="row">
+  <div class="m-t-1">
+    <button class="btn btn-primary" (click)="doGET()">GET</button>
+    <button class="btn btn-primary" (click)="doPOST()">POST</button>
+    <button class="btn btn-primary" (click)="doPUT()">PUT</button>
+    <button class="btn btn-primary" (click)="doDELETE()">DELETE</button>
+  </div>
+</div>
+
+<div class="row">
+    <div class="m-t-1">
+      <button class="btn btn-secondary" (click)="doGETAsPromise()">As Promise</button>
+      <button class="btn btn-secondary" (click)="doGETAsPromiseError()">Error As Promise</button>
+      <button class="btn btn-secondary" (click)="doGETAsObservable()">Error as doGETAsObservable</button>
+    </div>
+  </div>
