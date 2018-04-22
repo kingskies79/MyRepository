@@ -1,16 +1,17 @@
-<div class="row">
-  <div class="m-t-1">
-    <button class="btn btn-primary" (click)="doGET()">GET</button>
-    <button class="btn btn-primary" (click)="doPOST()">POST</button>
-    <button class="btn btn-primary" (click)="doPUT()">PUT</button>
-    <button class="btn btn-primary" (click)="doDELETE()">DELETE</button>
+<form class="form-inline">
+  <div class="form-group">
+    <input type="search" class="form-control" placeholder="Enter search string" #search>
   </div>
-</div>
+  <button type="button" class="btn btn-primary" (click)="doSearch(search.value)">Search</button>
+</form>
 
-<div class="row">
-    <div class="m-t-1">
-      <button class="btn btn-secondary" (click)="doGETAsPromise()">As Promise</button>
-      <button class="btn btn-secondary" (click)="doGETAsPromiseError()">Error As Promise</button>
-      <button class="btn btn-secondary" (click)="doGETAsObservable()">Error as doGETAsObservable</button>
-    </div>
-  </div>
+<hr>
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p> 
+</div>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let track of itunes.results" >
+    <img src="{{track.thumbnail}}">
+    <a target="_blank" href="{{track.link}}">{{track.track}}</a>
+    </li>
+</ul>
