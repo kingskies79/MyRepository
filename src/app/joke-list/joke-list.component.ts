@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import {JokeComponent} from '../joke/joke.component';
 import {Joke} from '../joke';
+import {JokeSave} from '../joke-save';
 
 @Component({
   selector: 'app-joke-list',
   templateUrl: './joke-list.component.html',
-  styleUrls: ['./joke-list.component.css']
+  styleUrls: ['./joke-list.component.css'],
+  providers: [JokeSave]
+  
 })
 export class JokeListComponent implements OnInit, AfterViewInit {
  
@@ -18,15 +21,19 @@ export class JokeListComponent implements OnInit, AfterViewInit {
 
     @ViewChild(JokeComponent) jokeViewChild: JokeComponent;
     @ViewChildren(JokeComponent) jokeViewChildren: QueryList <JokeComponent>;
+    constructor(private store: JokeSave){}
     
   ngOnInit() {
   }
   
  addJoke(j){
+   
   this.Jokes.unshift(j);
+  this.store.saveJoke(j);
+  console.log(this.store.ListJokes);
   }
   ngAfterViewInit(){
-    console.log(`ngAfterViewInit ${this.jokeViewChild}`);
+    
     let jokes: JokeComponent[]= this.jokeViewChildren.toArray();
     console.log(jokes);
   }
