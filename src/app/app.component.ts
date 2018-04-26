@@ -1,6 +1,6 @@
-import { Component,   } from '@angular/core';
+import { Component   } from '@angular/core';
 
-import { SearchService } from './search-service';
+
 
 
 @Component({
@@ -10,13 +10,5 @@ import { SearchService } from './search-service';
 
 })
 export class AppComponent {
-  private loading: boolean=false;
-constructor(private itunes: SearchService){
-
-}
-doSearch(term: string){
-  this.loading=true;
-  this.itunes.search(term).then(_ =>this.loading=false)
-}
-
+ 
 }
