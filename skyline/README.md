@@ -1,28 +1,43 @@
-# Skyline
+# Settings
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
+#install
 
-## Development server
+After download the application please launch the command line npm install for install dependencies.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#Execute 
+after install the dependencies please launch the command line npm start to run the application.
 
-## Code scaffolding
+# Explanation
+In this example we have a simulation about the manage of a simple parking. In this parking you can park some veicle as Car, Truck or motorbike.The parking as a max size of 15 veicle.
+In this simulation I have build three class (car,motorbike and truck) that extends the clas Veicle.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+In this application we have 3 components (form-parking,veicle and veicle-list ) and 5 class (car,truck,motorbike,parking and veicle).
 
-## Build
+The class car, truck and motorbike extends the class veicle.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+# Class Parking (garage)
+max-place = 15
+typeVeicleAllowed []
 
-## Running unit tests
+# Class Veicle (veicolo)
+    type: string;
+    id: number;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#Class Motorbike(moto) extends Veicle
+    super(type, id)
+    engine: string
 
-## Running end-to-end tests
+#Class Truck(furgone) extends Veicle
+    super(type, id)
+    capacity: string
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+#Class Car(auto) extends Veicle
+    super(type, id)
+    engine: string
+    doors: string
 
-## Further help
+# Directive from manage the img and style
+    CcMotoHoverDirective
+    CcFurgoneHoverDirective
+    CcAutoHoverDirective
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,7 +1,10 @@
 export class Veicolo {
     tipo: string;
-    constructor(tipo: string) {
+    id: number;
+
+    constructor(tipo: string, id: number) {
         this.tipo = tipo;
+        this.id =  id;
     }
     toString () {
 

@@ -1,9 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Garage } from '../garage';
 import { Veicolo } from '../veicolo';
-import { MotoComponent } from '../moto/moto.component';
-import { AutoComponent } from '../auto/auto.component';
-import { FurgoneComponent } from '../furgone/furgone.component';
+import { Moto } from '../moto';
+import { Auto } from '../auto';
+import { Furgone} from '../furgone';
 @Component({
   selector: 'app-form-garage',
   templateUrl: './form-garage.component.html',
@@ -59,7 +58,7 @@ export class FormGarageComponent  implements OnInit {
   inserisciMoto() {
     this.id += 1;
      console.log('inserisciMoto');
-      this.InserisciMezzo.emit(new MotoComponent(this.tipoMotore, this.id));
+      this.InserisciMezzo.emit(new Moto(this.tipoMotore, this.id));
 
 
 
@@ -68,7 +67,7 @@ export class FormGarageComponent  implements OnInit {
   inserisciAuto(porte: string, alimentazione: string) {
     console.log('inserisciAuto');
     this.id += 1;
-      this.InserisciMezzo.emit(new AutoComponent(this.tipoPorte, this.tipoAlimentazione, this.id));
+      this.InserisciMezzo.emit(new Auto(this.tipoPorte, this.tipoAlimentazione, this.id));
 
 
   }
@@ -76,7 +75,7 @@ export class FormGarageComponent  implements OnInit {
 
     console.log('inserisciFurgone');
     this.id += 1;
-      this.InserisciMezzo.emit(new FurgoneComponent(this.tipoVolume, this.id));
+      this.InserisciMezzo.emit(new Furgone(this.tipoVolume, this.id));
 
 
   }

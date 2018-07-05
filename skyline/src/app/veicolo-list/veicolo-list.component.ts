@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Garage } from '../garage';
 import { Veicolo } from '../veicolo';
-import { MotoComponent } from '../moto/moto.component';
-import { AutoComponent } from '../auto/auto.component';
-import { FurgoneComponent } from '../furgone/furgone.component';
+
 
 @Component({
   selector: 'app-veicolo-list',
@@ -11,35 +9,37 @@ import { FurgoneComponent } from '../furgone/furgone.component';
   styleUrls: ['./veicolo-list.component.css']
 })
 export class VeicoloListComponent implements OnInit {
-  newGarage: Garage= new Garage(15 , ['Auto', 'Moto' , 'Furgone}']);
-  garage: Veicolo[] = new Array();
+  // create a parking with 15 max veicle, for only Car, Motorbike and Truck
+  newGarage: Garage = new Garage(15, ['Auto', 'Moto', 'Furgone}']);
+  // create an array of carports with type veicle
+  carport: Veicolo[] = [];
   constructor() { }
 
   ngOnInit() {
   }
 
   addMezzo(mezzo) {
-    console.log(mezzo);
+    // Show log about veicle into the parking
+    console.log('mezzo add' + mezzo);
+    // verify places avaiable
     if (this.disponibilita()) {
-      this.garage.unshift(mezzo);
-      console.log(this.garage);
+      // add veicle into parking
+      this.carport.unshift(mezzo);
+      // show the veicles present into carports
+      console.log(this.carport);
     } else {
-      alert( 'Il garage è pieno');
+      // the carports are unavaiables
+      alert('Il garage è pieno');
     }
   }
-  removeMezzo (id) {
-    console.log('removeMezzo' + id);
-   // const index: number = this.garage.indexOf(id);
-    this.garage.splice(this.garage.indexOf(id), 1);
-   // console.log('index' + index);
-   /* if (index !== -1) {
-        this.garage.splice(index, 1);
-    }*/
-
+  // the veicle go out the parking
+  removeMezzo(id) {
+    const index = this.carport.findIndex(x => x.id = id);
+    this.carport.splice(index, 1);
   }
-
+  // verify the status of the parking
   disponibilita(): boolean {
-    if (this.garage.length < this.newGarage.capienza) {
+    if (this.carport.length < this.newGarage.capienza) {
       return true;
 
     } else {
